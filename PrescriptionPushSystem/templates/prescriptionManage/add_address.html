@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>订单收货信息添加</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="{% static 'layui/css/layui.css' %}" media="all">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<div class="layui-form" lay-filter="orderAddressAdd" id="orderAddressAdd" style="padding: 10px 10px 0 0;">
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <div style="font-size: large;color:#0b77c2">1.新增联系人<sub style="color: #8b2767">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(如已有联系人地址，则可跳过此步)</sub></div>
+        </div>
+        <div class="layui-inline">
+            <div class="layui-form-mid">就诊 ID :</div>
+            <div class="layui-input-inline">
+                <input type="text" name="treatCard" id="treatCard" autocomplete="off" value="{{ treat_card }}" readonly class="layui-input">
+            </div>
+            <div class="layui-form-mid">收货人姓名:</div>
+            <div class="layui-input-inline">
+                <input type="text" name="consignee" id="consignee" autocomplete="off" value="{{ username }}" class="layui-input">
+            </div>
+            <div class="layui-form-mid">收货人电话:</div>
+            <div class="layui-input-inline">
+                <input type="text" name="conTel" id="conTel" autocomplete="off" value="{{ tel }}" class="layui-input">
+            </div>
+            <div class="layui-form-mid">地址类型:</div>
+            <div class="layui-input-inline">
+                <input type="radio" name="is_hos_addr" id="is_hos_addr" value="1" title="医院" lay-filter="isHosAddrCheck">
+                <input type="radio" name="is_hos_addr" id="is_hos_addr" value="2" checked title="个人" lay-filter="isHosAddrCheck">
+            </div>
+        </div>
+        <div class="layui-inline">
+{#            <label class="layui-form-label control_label" style="width: 85px"><span class="red">*</span>收货地址</label>#}
+            <div class="layui-form-mid">收货地址:</div>
+                <div class="layui-input-inline">
+                    <select name="comProvince" id="comProvince">
+                        <option value="">请选择省</option>
+                    </select>
+                </div>
+                <div class="layui-input-inline">
+                    <select name="comCity" id="comCity">
+                        <option value="">请选择市</option>
+                    </select>
+                </div>
+                <div class="layui-input-inline">
+                    <select name="comZone" id="comZone">
+                        <option value="">请选择区(县)</option>
+                    </select>
+                </div>
+                <div class="layui-input-inline" style="width: 300px">
+                    <input type="text" name="addr_str" placeholder="请输入详细地址" id="addr_str" lay-verify="required" class="layui-input">
+                </div>
+            <div class="layui-input-inline">
+                <button class="layui-btn layuiadmin-btn-admin" data-type="saveAddress">保存联系人</button>
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <div style="font-size: large;color:#0b77c2">2.联系人地址管理<sub style="color: #8b2767">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(请从列表选择一个地址，然后点击"保存处方地址".)【如需约定送货上门时间，请在送货时间处选择合适的时间再保存！】</sub></div>
+        </div>
+        <table id="LAY-customAddress-back-manage" lay-filter="LAY-customAddress-back-manage"></table>
+        {% if is_associate == 1 %}
+
+        {% else %}
+            <div class="layui-form-mid">送货时间:</div>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input laydate-item" autocomplete="off" name="send_goods_time" id="send_goods_time">
+            </div>
+            <div class="layui-input-inline">
+                <button class="layui-btn layuiadmin-btn-admin" data-type="savePresAddress">保存处方地址</button>
+            </div>
+        {% endif %}
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <div style="font-size: large;color:#0b77c2">3.处方地址信息</div>
+        </div>
+        <table id="LAY-presAddress-back-manage" lay-filter="LAY-presAddress-back-manage"></table>
+        <input type="hidden" name="presNum" id="presNum" value="{{ pres_num }}" class="table_input">
+    </div>
+    {% verbatim %}
+    <script id="isHosAddrTpl" type="text/html">
+        {{ d.is_hos_addr == 2 ? '个人' : '医院'}}
+    </script>
+    {% endverbatim %}
+    <script type="text/html" id="table-address-manage">
+        <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i
+                class="layui-icon layui-icon-edit"></i>编辑</a>
+        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i
+                class="layui-icon layui-icon-delete"></i>删除</a>
+    </script>
+</div>
+
+<script src="{% static 'layui/layui.js' %}"></script>
+<script src="{% static 'js/jquery-1.12.3.min.js' %}"></script>
+<script src="{% static 'js/region.js' %}"></script>
+<script>
+    window.onload=function () {
+        var cp = document.getElementById('comProvince');
+        var cc = document.getElementById('comCity');
+        var cz = document.getElementById('comZone');
+        region(cp,cc,cz);
+    };
+
+    layui.use(['element', 'table', 'form', 'layer', 'laydate'], function () {
+        var $ = layui.jquery;
+        window.form = layui.form;
+        var element = layui.element;
+        window.layer = layui.layer;
+        var table = layui.table;
+        var laydate = layui.laydate;
+        var treat_card = $("#treatCard").val();
+        var pres_num = $("#presNum").val();
+
+        //时间段
+        lay('.laydate-item').each(function () {
+            laydate.render({
+                elem: this
+                , trigger: 'click'
+                {#, type: 'date'#}
+                , type: 'datetime'
+            });
+        });
+
+        form.render('select');
+
+        form.on('radio(isHosAddrCheck)', function (data) {
+            if (data.value == '1'){
+                $.get("{% url 'management:company' %}",function (data) {
+                    {#console.log(data)#}
+                    form.val('orderAddressAdd', {
+                        "consignee": data.companyname
+                        ,"conTel": data.companytel
+                        ,"comProvince": data.companyprovince
+                        ,"comCity": data.companycity
+                        ,"comZone": data.companyzone
+                        ,"addr_str": data.companyaddress
+                    });
+                    form.render('select');
+                });
+            }else if (data.value == '2'){
+                form.val('orderAddressAdd', {
+                        "consignee": ' '
+                        ,"conTel": ' '
+                        ,"comProvince": ' '
+                        ,"comCity": ' '
+                        ,"comZone": ' '
+                        ,"addr_str": ' '
+                    });
+                form.render('select');
+            }
+        });
+
+        table.render({
+            elem: '#LAY-customAddress-back-manage'
+            , url: '{% url 'management:tableData' type='address_table' %}' + '?&custom_num=' + treat_card
+            , page: true
+            {#,height: 'full-100'#}
+            , limit: 10
+            , limits: [10, 15, 20]
+            , cols: [[
+                {checkbox: true, fixed: true}
+                , {field: 'addr_id', title: '编号',width:60, align: 'center'}
+                , {field: 'consignee', title: '收货人姓名',width:150, align: 'center'}
+                , {field: 'con_tel', title: '收货人电话', align: 'center',width:200}
+                , {field: 'province_city_zone', title: '所在地区',width:200, align: 'center'}
+                , {field: 'addr_detail', title: '详细地址',width:235, align: 'center'}
+                , {field: 'is_hos_addr', title: '地址类型',width:90, align: 'center',templet:'#isHosAddrTpl'}
+                , {field: 'right', title: '操作', width: 200, align: 'center', toolbar: '#table-address-manage'}
+            ]]
+        });
+        table.render({
+            elem: '#LAY-presAddress-back-manage'
+            , url: '{% url 'management:tableData' type='pres_consignee' %}' + '?&pres_num=' + pres_num
+            , page: false
+            {#,height: 'full-100'#}
+            , limit: 10
+            , limits: [10, 15, 20]
+            , cols: [[
+                {field: 'pres_num', title: '处方号',width:200, align: 'center'}
+                , {field: 'consignee', title: '收货人',width:185, align: 'center'}
+                , {field: 'con_tel', title: '电话/手机', align: 'center',width:200}
+                , {field: 'province_city_zone', title: '所在地区',width:200, align: 'center'}
+                , {field: 'addr_detail', title: '详细地址',width:300, align: 'center'}
+                , {field: 'is_hos_addr', title: '地址类型',width:100, align: 'center',templet:'#isHosAddrTpl'}
+            ]]
+        });
+
+        //事件
+        var active = {
+            saveAddress: function () {
+                var addrDatas = form.val("orderAddressAdd");   //获取表单值
+                {#console.log(addrDatas);#}
+                if (addrDatas.is_hos_addr == "") {
+                    layer.msg("请选择送货方式！");
+                    $("#is_hos_addr").focus();
+                    return false;
+                }
+                if (addrDatas.comProvince == "") {
+                    layer.msg("请选择省！");
+                    $("#comProvince").focus();
+                    return false;
+                }
+                if (addrDatas.comCity == "") {
+                    layer.msg("请选择市！");
+                    $("#comCity").focus();
+                    return false;
+                }
+                if (addrDatas.comZone == "") {
+                    layer.msg("请选择区！");
+                    $("#comZone").focus();
+                    return false;
+                }
+                if (addrDatas.consignee == " ") {
+                    layer.msg("请输入收货人姓名！");
+                    $("#consignee").focus();
+                    return false;
+                }
+                if (addrDatas.conTel == " ") {
+                    layer.msg("请输入收货人电话！");
+                    $("#con_tel").focus();
+                    return false;
+                }
+                if (addrDatas.addr_str === " ") {
+                    layer.msg("请输入详细收货地址！");
+                    $("#addr_str").focus();
+                    return false;
+                }
+                $.ajax({
+                    url: "{% url 'management:presUpload' type='entryAddress' %}",
+                    data: addrDatas,
+                    dataType: "TEXT",
+                    type: "POST",
+                    csrfmiddlewaretoken: '{{ csrf_token  }}',
+                    success: function (res) {
+                        var msg = eval("(" + res + ")");        //坑！必须转换成json对象后才能判断status
+                        if (msg.status === 'success') {
+                            table.reload('LAY-customAddress-back-manage'); //数据刷新，静态更新表格中的数据
+                            alert("就诊id: 【" + addrDatas['treatCard'] + "】联系人保存成功！")
+                        } else {
+                            alert("就诊id: 【" + addrDatas['treatCard'] + "】 联系人保存失败！\n原因：" + msg.message)
+                        }
+                    }
+                });
+            }
+            ,savePresAddress:function () {
+                var checkStatus = table.checkStatus('LAY-customAddress-back-manage')
+                    , checkData = checkStatus.data; //得到选中的数据
+                var send_good_time = $("#send_goods_time").val();
+                var associateDatas = {};
+                if (checkData.length === 0) {
+                    return layer.msg('请选择一条地址数据！');
+                }else if (checkData.length > 1) {
+                    return layer.msg('一个处方只能关联一条地址信息,请重新勾选！');
+                }else {
+                    {#console.log(checkData);#}
+                    associateDatas['addrId'] = checkData[0].addr_id;
+                    associateDatas['presNum'] = pres_num;
+                    associateDatas['send_good_time'] = send_good_time;
+                    {#console.log(associateDatas);#}
+                    if (confirm("确定要保存该处方地址吗?")){
+                        $.ajax({url: "{% url 'management:presUpload' type='savePresAddress' %}",
+                        data: associateDatas,
+                        type: 'POST',
+                        dataType: 'TEXT',
+                        csrfmiddlewaretoken: '{{ csrf_token }}',
+                        success: function (res) {
+                            var msg = eval("(" + res + ")");
+                            if (msg.status === 'success') {
+                                table.reload('LAY-presAddress-back-manage'); //数据刷新，静态更新表格中的数据
+                                layer.msg("处方号: 【" + associateDatas['presNum'] + "】联系人保存成功！");
+                            } else {
+                                layer.msg("处方号: 【" + associateDatas['presNum'] + "】 联系人保存失败！\n原因：" + msg.message);
+                            }
+                        }
+                        });
+                    }
+                }
+                setTimeout(function () {
+                    location.reload();    //关闭弹层
+                }, 4000);
+            }
+        };
+
+        //工具栏
+        table.on("tool(LAY-customAddress-back-manage)", function (e) {
+            var addrId = e.data.addr_id;
+            console.log(e.data);
+            if ('edit' === e.event) {
+                layer.open({
+                    type: 2
+                    , title: '修改地址'
+                    , content: '{% url 'management:addressManage' type='addressEdit' %}' + '?addrId=' + addrId
+                    , area: ["800px", "500px"]
+                    , btn: ["保存", "取消"]
+                    , btnAlign: 'c'
+                    , yes: function (index) {
+                        var iframe = window['layui-layer-iframe' + index];
+                        var Data = iframe.callbackdata(index);
+                        console.log(Data);
+                        $.ajax({
+                            url: "{% url 'management:addressManage' type='addressEdit' %}",
+                            data: Data,
+                            dataType: "TEXT",
+                            type: "POST",
+                            csrfmiddlewaretoken: '{{ csrf_token  }}',
+                            success: function (res) {
+                                var msg = eval("(" + res + ")");        //坑！必须转换成json对象后才能判断status
+                                if (msg.status === 'success') {
+                                    table.reload('LAY-customAddress-back-manage'); //数据刷新，静态更新表格中的数据
+                                    alert("地址修改成功！")
+                                } else {
+                                    alert("地址修改失败！\n原因：" + msg.message)
+                                }
+                                setTimeout(function () {
+                                    layer.close(index);     //关闭弹层
+                                }, 600);
+                            }
+                        });
+                    }
+                })
+            } else if ('del' === e.event) {
+                layer.confirm('确定删除吗？', function (index) {
+                    $.ajax({
+                        url: "{% url 'management:addressManage' type='addressDelete' %}",
+                        data: {'delData': e.data.addr_id},
+                        type: 'POST',
+                        dataType: 'TEXT',
+                        csrfmiddlewaretoken: '{{ csrf_token }}',
+                        success: function (res) {
+                            var msg = eval("(" + res + ")");
+                            if (msg.status === 'success') {
+                                table.reload('LAY-customAddress-back-manage'); //数据刷新，静态更新表格中的数据
+                                layer.msg('地址已删除！');
+                            } else {
+                                layer.msg('地址删除失败！原因：' + msg.message);
+                            }
+                        }
+                    });
+                })
+            }
+        });
+
+        $('.layui-btn.layuiadmin-btn-admin').on('click', function () {
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+    });
+</script>
+</body>
+</html>

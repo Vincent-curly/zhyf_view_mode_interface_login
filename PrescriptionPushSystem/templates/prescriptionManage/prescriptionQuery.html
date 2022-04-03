@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>处方查询列表</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'layui/css/layui.css' %}">
+    <link href="{% static 'fonts/iconfont.css' %}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="padding_10">
+    <div class="layui-row">
+        <div class="layui-card">
+            <div class="layui-card-body">
+                <div class="form-box">
+                    <div class="layui-form layui-form-item">
+                        <div class="layui-inline">
+                            <div class="layui-form-mid">处方状态:</div>
+                            <div class="layui-input-inline" style="width: 160px">
+                                <select name="uploadStatus" id="uploadStatus">
+                                    <option value="" >全部</option>
+                                    <option value="0" >未上传</option>
+                                    <option value="-1" >成功</option>
+                                    <option value="99" >失败</option>
+                                </select>
+                            </div>
+                            <div class="layui-form-mid">开始时间:</div>
+                            <div class="layui-input-inline">
+                                <input type="text" class="layui-input test-laydate-item" autocomplete="on" name="startDate" id="startDate">
+                            </div>
+                            <div class="layui-form-mid">结束时间</div>
+                            <div class="layui-input-inline">
+                                <input type="text" name="endDate" id="endDate" autocomplete="on" class="layui-input test-laydate-item">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <div class="layui-form-mid">客户姓名:</div>
+                            <div class="layui-input-inline" style="width: 120px">
+                                <input type="text" name="userName" id="userName" autocomplete="off" class="layui-input">
+                            </div>
+                            <div class="layui-form-mid">医生姓名:</div>
+                            <div class="layui-input-inline" style="width: 120px">
+                                <input type="text" name="doctorName" id="doctorName" autocomplete="off" class="layui-input">
+                            </div>
+                            <div class="layui-form-mid">订单号:</div>
+                            <div class="layui-input-inline">
+                                <input type="text" name="orderId" id="orderId" autocomplete="off" class="layui-input">
+                            </div>
+                            <div class="layui-form-mid">处方号:</div>
+                            <div class="layui-input-inline">
+                                <input type="text" name="PresNum" id="PresNum" autocomplete="off" class="layui-input">
+                            </div>
+                            <div class="layui-inline">
+                                <button class="layui-btn layuiadmin-btn-admin" lay-submit
+                                        lay-filter="LAY-prescription-search">
+                                    <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <table id="LAY-prescription-query-manage" lay-filter="LAY-prescription-query-manage"></table>
+                {% verbatim %}
+                <script id="isSufferTpl" type="text/html">
+                    {{ d.is_suffering == 0 ? '非煎煮' : '<span style="color: red;">煎煮</span>'}}
+                </script>
+                <script id="uploadStatusTpl" type="text/html">
+                    {{d.upload_status == -1 ? '<span style="color: green;">上传成功</span>':
+                    d.upload_status == 0 ? '<span style="color: lightseagreen;">待上传</span>' :
+                    d.upload_status >= 1 ? '<span style="color: red;">上传失败</span>':
+                    ''}}
+                </script>
+                <script id="genderTpl" type="text/html">
+                    {{ d.gender == 0 ? '女' : '男'}}
+                </script>
+                {% endverbatim %}
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{% static 'layui/layui.js' %}"></script>
+<script src="{% static 'js/jquery-1.12.3.min.js' %}"></script>
+<script>
+    //JavaScript代码区域
+
+    layui.use(['element', 'form', 'table', 'laydate', 'layer'], function () {
+        var $ = layui.jquery;
+        var element = layui.element;
+        var form = layui.form;
+        window.table = layui.table;
+        var layer = layui.layer;
+        var laydate = layui.laydate;
+
+        //时间段
+        lay('.test-laydate-item').each(function () {
+            laydate.render({
+                elem: this
+                , trigger: 'click'
+                , type: 'datetime'
+            });
+        });
+
+        //请求用户表信息，渲染
+        table.render({
+            elem: '#LAY-prescription-query-manage'
+            , url: '{% url 'management:tableData' type='midPrescriptionTable' %}'
+            , page: true
+            {#,height: 'full-100'#}
+            , limit: 10
+            , limits: [10, 15, 20]
+            , cols: [[
+                {field: 'pres_num', title: '医院处方号',width:160, align: 'center'}
+                , {field: 'order_id', title: '康美订单号',width:140, align: 'center'}
+                , {field: 'treat_card', title: '就诊ID',width:100, align: 'center'}
+                , {field: 'user_name', title: '患者姓名',width:90, align: 'center'}
+                , {field: 'gender', title: '性别', align: 'center',width:60,templet:'#genderTpl'}
+                , {field: 'age', title: '年龄',width:60, align: 'center'}
+                , {field: 'doctor', title: '开方医生',width:90, align: 'center'}
+                , {field: 'consignee', title: '收货人', align: 'center',width:150}
+                , {field: 'con_tel', title: '收货人电话', align: 'center',width:130}
+                , {field: 'addr_str', title: '收货地址',width:200, align: 'center'}
+                , {field: 'pres_time', title: '处方时间',width:160, align: 'center'}
+                , {field: 'send_goods_time', title: '送货时间',width:160, align: 'center'}
+                , {field: 'is_suffering', title: '是否煎煮',width:90, align: 'center',templet: '#isSufferTpl'}
+                , {field: 'upload_status', title: '上传状态',width:90, align: 'center',templet:'#uploadStatusTpl'}
+                , {field: 'description', title: '描述信息',width:200, align: 'center'}
+            ]]
+        });
+
+        //监听搜索
+        form.on('submit(LAY-prescription-search)', function (data) {
+            var field = data.field;
+            console.log(field);
+            //执行重载
+            table.reload('LAY-prescription-query-manage', {
+                where: {
+                    uploadStatus:field.uploadStatus,
+                    startDate: field.startDate,
+                    endDate: field.endDate,
+                    userName:field.userName,
+                    doctorName: field.doctorName,
+                    orderId:field.orderId,
+                    PresNum:field.PresNum,
+                },
+                page: {
+                    curr: 1
+                }
+            });
+            return false;
+        });
+    })
+
+
+</script>
+</body>
+</html>
