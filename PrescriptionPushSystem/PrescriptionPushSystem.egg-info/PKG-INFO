@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: PrescriptionPushSystem
+Version: 0.1
+Summary: A simple system based on django which is provided for medical institutions to upload Chinese medicine prescriptions to wisdom pharmacy. It is also a system interface implementation of view mode .
+Home-page: http://www.wisdompharmacy.cn
+Author: vincent
+Author-email: clvincent@126.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.7

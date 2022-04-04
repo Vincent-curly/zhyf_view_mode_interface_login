@@ -17,7 +17,7 @@ import os
 import time
 from xml.dom import minidom
 
-from PrescriptionPushSystem.settings import RESOURCES_DIRS
+from PrescriptionPushSystem.settings import BASE_DIR
 
 
 def get_config(section_name, options):
@@ -27,8 +27,7 @@ def get_config(section_name, options):
     :param options:
     :return:
     """
-    # config_dir = "./resources/"
-    config_dir = RESOURCES_DIRS[0]
+    config_dir = BASE_DIR / 'resources'
     config_path = os.path.join(config_dir, "config.ini")
     config = configparser.ConfigParser()
     config.read(config_path)

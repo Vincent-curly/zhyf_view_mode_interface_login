@@ -1,0 +1,928 @@
+[2022-04-05 01:51:13,963] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 01:51:14,300] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 01:51:14,522] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 01:51:14,522] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 01:51:14,522] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 01:51:14,523] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 01:51:14,529] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 01:51:14,588] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 01:51:14,588] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 01:51:14,588] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 01:52:13,963] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 01:52:13,971] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 01:52:14,019] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 01:52:14,020] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 01:52:14,020] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 01:52:14,020] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 01:52:14,028] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 01:52:14,054] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 01:52:14,055] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 01:52:14,055] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 01:53:13,964] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 01:53:13,975] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 01:53:14,011] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 01:53:14,011] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 01:53:14,011] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 01:53:14,011] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 01:53:14,016] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 01:53:14,035] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 01:53:14,035] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 01:53:14,035] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 01:54:13,976] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 01:54:13,985] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 01:54:14,019] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 01:54:14,019] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 01:54:14,020] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 01:54:14,020] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 01:54:14,031] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 01:54:14,076] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 01:54:14,077] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 01:54:14,077] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 01:55:13,956] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 01:55:13,959] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 01:55:13,991] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 01:55:13,992] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 01:55:13,992] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 01:55:13,992] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 01:55:14,000] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 01:55:14,048] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 01:55:14,049] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 01:55:14,049] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 01:56:13,953] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 01:56:13,962] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 01:56:13,992] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 01:56:13,992] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 01:56:13,992] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 01:56:13,992] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 01:56:14,000] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 01:56:14,029] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 01:56:14,029] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 01:56:14,029] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 01:57:13,966] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 01:57:13,974] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 01:57:14,009] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 01:57:14,009] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 01:57:14,009] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 01:57:14,009] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 01:57:14,015] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 01:57:14,033] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 01:57:14,034] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 01:57:14,034] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 01:58:13,963] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 01:58:13,967] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 01:58:14,021] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 01:58:14,021] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 01:58:14,021] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 01:58:14,021] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 01:58:14,024] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 01:58:14,038] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 01:58:14,039] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 01:58:14,039] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 01:59:13,973] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 01:59:13,981] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 01:59:14,007] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 01:59:14,008] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 01:59:14,008] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 01:59:14,008] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 01:59:14,013] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 01:59:14,043] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 01:59:14,044] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 01:59:14,044] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:00:13,955] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:00:13,965] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:00:13,993] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:00:13,993] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:00:13,994] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:00:13,994] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:00:14,003] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:00:14,028] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:00:14,029] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:00:14,029] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:01:13,966] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:01:13,970] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:01:13,985] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:01:13,985] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:01:13,985] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:01:13,986] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:01:13,991] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:01:14,006] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:01:14,006] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:01:14,006] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:02:13,952] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:02:13,957] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:02:13,978] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:02:13,978] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:02:13,978] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:02:13,978] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:02:13,984] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:02:14,003] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:02:14,004] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:02:14,004] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:03:13,953] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:03:13,955] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:03:13,963] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:03:13,963] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:03:13,963] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:03:13,963] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:03:13,966] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:03:13,974] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:03:13,974] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:03:13,974] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:04:13,958] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:04:13,966] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:04:14,004] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:04:14,005] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:04:14,005] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:04:14,005] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:04:14,015] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:04:14,031] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:04:14,031] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:04:14,031] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:05:13,952] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:05:13,963] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:05:13,992] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:05:13,993] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:05:13,993] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:05:13,994] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:05:14,006] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:05:14,029] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:05:14,030] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:05:14,030] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:06:13,957] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:06:13,965] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:06:14,000] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:06:14,001] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:06:14,001] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:06:14,002] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:06:14,013] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:06:14,031] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:06:14,031] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:06:14,031] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:07:13,956] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:07:13,961] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:07:13,977] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:07:13,977] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:07:13,977] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:07:13,977] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:07:13,981] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:07:14,004] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:07:14,004] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:07:14,004] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:08:13,952] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:08:13,960] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:08:13,995] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:08:13,996] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:08:13,996] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:08:13,996] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:08:14,017] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:08:14,031] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:08:14,031] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:08:14,031] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:09:13,950] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:09:13,955] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:09:13,978] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:09:13,979] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:09:13,979] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:09:13,979] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:09:13,985] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:09:13,996] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:09:13,996] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:09:13,996] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:10:13,951] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:10:13,960] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:10:13,984] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:10:13,984] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:10:13,984] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:10:13,984] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:10:13,990] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:10:14,005] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:10:14,005] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:10:14,006] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:11:13,952] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:11:13,956] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:11:13,966] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:11:13,966] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:11:13,966] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:11:13,966] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:11:13,968] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:11:13,976] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:11:13,976] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:11:13,976] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:12:13,956] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:12:13,969] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:12:13,991] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:12:13,991] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:12:13,991] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:12:13,992] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:12:13,995] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:12:14,010] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:12:14,010] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:12:14,010] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:13:13,958] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:13:13,964] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:13:13,985] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:13:13,985] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:13:13,985] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:13:13,985] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:13:13,990] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:13:14,004] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:13:14,004] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:13:14,004] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:14:13,955] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:14:13,959] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:14:13,972] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:14:13,973] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:14:13,973] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:14:13,973] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:14:13,977] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:14:13,988] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:14:13,989] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:14:13,989] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:15:13,966] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:15:13,972] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:15:13,988] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:15:13,988] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:15:13,988] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:15:13,989] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:15:13,993] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:15:14,006] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:15:14,006] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:15:14,006] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:16:13,968] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:16:13,980] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:16:14,014] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:16:14,015] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:16:14,015] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:16:14,016] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:16:14,028] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:16:14,062] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:16:14,062] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:16:14,062] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:17:13,966] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:17:13,981] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:17:14,015] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:17:14,015] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:17:14,016] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:17:14,016] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:17:14,029] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:17:14,082] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:17:14,082] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:17:14,082] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:18:13,963] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:18:13,972] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:18:14,004] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:18:14,005] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:18:14,005] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:18:14,005] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:18:14,020] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:18:14,049] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:18:14,050] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:18:14,050] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:19:13,975] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:19:13,987] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:19:14,018] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:19:14,018] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:19:14,019] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:19:14,019] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:19:14,027] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:19:14,048] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:19:14,049] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:19:14,049] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:20:13,987] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:20:14,028] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:20:14,077] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:20:14,078] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:20:14,078] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:20:14,078] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:20:14,090] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:20:14,104] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:20:14,104] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:20:14,104] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:21:13,964] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:21:13,969] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:21:13,988] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:21:13,988] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:21:13,989] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:21:13,989] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:21:13,994] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:21:14,013] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:21:14,013] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:21:14,014] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:22:13,964] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:22:13,970] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:22:13,981] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:22:13,981] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:22:13,981] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:22:13,981] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:22:13,985] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:22:13,992] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:22:13,993] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:22:13,993] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:23:13,955] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:23:13,959] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:23:13,973] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:23:13,974] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:23:13,974] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:23:13,974] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:23:13,978] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:23:13,989] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:23:13,989] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:23:13,989] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:24:13,951] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:24:13,957] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:24:13,972] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:24:13,972] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:24:13,972] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:24:13,972] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:24:13,976] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:24:13,990] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:24:13,990] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:24:13,990] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:25:13,964] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:25:13,975] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:25:14,010] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:25:14,010] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:25:14,011] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:25:14,011] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:25:14,017] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:25:14,036] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:25:14,037] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:25:14,038] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:26:13,964] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:26:13,972] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:26:13,988] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:26:13,988] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:26:13,988] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:26:13,989] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:26:13,995] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:26:14,035] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:26:14,037] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:26:14,037] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:27:13,966] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:27:13,970] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:27:13,985] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:27:13,986] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:27:13,986] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:27:13,986] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:27:13,989] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:27:14,004] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:27:14,004] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:27:14,004] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:28:13,954] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:28:13,958] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:28:13,969] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:28:13,969] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:28:13,969] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:28:13,969] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:28:13,973] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:28:13,983] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:28:13,983] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:28:13,984] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:29:13,958] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:29:13,970] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:29:13,987] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:29:13,987] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:29:13,987] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:29:13,988] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:29:13,993] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:29:14,006] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:29:14,006] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:29:14,006] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:30:13,965] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:30:13,971] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:30:13,986] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:30:13,987] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:30:13,987] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:30:13,987] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:30:13,992] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:30:14,007] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:30:14,007] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:30:14,007] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:31:13,962] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:31:13,971] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:31:14,000] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:31:14,001] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:31:14,001] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:31:14,001] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:31:14,009] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:31:14,037] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:31:14,038] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:31:14,038] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:32:13,955] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:32:13,966] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:32:13,997] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:32:13,998] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:32:13,998] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:32:13,998] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:32:14,013] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:32:14,051] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:32:14,051] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:32:14,051] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:33:13,961] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:33:13,966] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:33:13,979] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:33:13,980] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:33:13,980] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:33:13,980] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:33:13,984] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:33:13,996] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:33:13,996] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:33:13,996] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:34:13,979] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:34:14,006] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:34:14,026] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:34:14,026] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:34:14,026] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:34:14,027] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:34:14,033] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:34:14,047] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:34:14,047] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:34:14,047] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:35:13,990] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:35:14,032] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:35:14,062] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:35:14,062] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:35:14,063] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:35:14,063] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:35:14,070] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:35:14,087] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:35:14,087] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:35:14,087] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:36:13,981] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:36:14,053] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:36:14,076] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:36:14,076] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:36:14,076] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:36:14,076] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:36:14,082] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:36:14,103] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:36:14,103] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:36:14,104] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:37:13,979] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:37:13,990] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:37:14,024] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:37:14,024] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:37:14,025] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:37:14,025] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:37:14,035] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:37:14,069] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:37:14,070] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:37:14,070] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:38:13,959] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:38:13,961] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:38:13,981] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:38:13,982] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:38:13,982] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:38:13,982] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:38:13,984] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:38:13,994] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:38:13,994] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:38:13,994] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:39:13,966] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:39:13,976] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:39:14,007] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:39:14,007] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:39:14,008] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:39:14,008] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:39:14,017] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:39:14,044] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:39:14,044] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:39:14,044] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:40:13,979] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:40:13,995] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:40:14,021] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:40:14,021] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:40:14,021] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:40:14,021] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:40:14,028] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:40:14,043] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:40:14,043] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:40:14,043] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:41:13,967] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:41:13,970] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:41:13,983] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:41:13,983] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:41:13,983] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:41:13,983] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:41:13,986] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:41:13,998] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:41:13,998] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:41:13,998] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:42:13,967] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:42:13,981] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:42:14,018] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:42:14,018] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:42:14,019] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:42:14,019] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:42:14,031] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:42:14,056] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:42:14,057] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:42:14,057] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:43:13,968] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:43:13,981] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:43:14,021] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:43:14,022] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:43:14,022] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:43:14,022] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:43:14,036] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:43:14,056] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:43:14,057] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:43:14,057] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:44:13,955] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:44:13,974] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:44:14,002] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:44:14,002] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:44:14,003] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:44:14,003] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:44:14,007] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:44:14,035] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:44:14,035] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:44:14,035] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 02:45:13,982] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:14172]:上传处方定时任务开始================================
+[2022-04-05 02:45:14,002] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:14172]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 02:45:14,038] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:14172]:- ==> Parameters:[]
+[2022-04-05 02:45:14,038] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:14172]:- <==  Columns: pres_num , upload_status
+[2022-04-05 02:45:14,038] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:14172]:本次无未上传处方！
+[2022-04-05 02:45:14,039] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:14172]:查询处方地址关联表:
+[2022-04-05 02:45:14,045] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:14172]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 02:45:14,452] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:14172]:- ==> Parameters:
+[2022-04-05 02:45:14,452] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:14172]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 02:45:14,452] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:14172]:上传处方定时任务结束================================
+[2022-04-05 06:56:17,982] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:pres_upload:415]:[MainProcess:2496]:==> 保存联系人:
+[2022-04-05 06:56:17,982] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:pres_upload:416]:[MainProcess:2496]:==> custom_num:40659
+[2022-04-05 06:56:17,982] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:pres_upload:417]:[MainProcess:2496]:==> 地址信息:{'custom_num': '40659', 'consignee': '云南省精神病医院', 'con_tel': '0871-63543252', 'province': '云南省', 'city': '昆明市', 'zone': '盘龙区', 'addr_detail': '穿金路733号', 'is_hos_addr': '1'}
+[2022-04-05 06:56:18,003] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:pres_upload:426]:[MainProcess:2496]:{'status': 'success', 'message': '保存联系人成功！'}
+[2022-04-05 06:56:25,147] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:2496]:上传处方定时任务开始================================
+[2022-04-05 06:56:25,150] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:2496]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 06:56:25,164] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:2496]:- ==> Parameters:[]
+[2022-04-05 06:56:25,164] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:2496]:- <==  Columns: pres_num , upload_status
+[2022-04-05 06:56:25,164] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:2496]:本次无未上传处方！
+[2022-04-05 06:56:25,165] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:2496]:查询处方地址关联表:
+[2022-04-05 06:56:25,167] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:2496]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 06:56:25,182] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:2496]:- ==> Parameters:
+[2022-04-05 06:56:25,182] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:2496]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 06:56:25,182] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:2496]:上传处方定时任务结束================================
+[2022-04-05 06:57:25,155] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:2496]:上传处方定时任务开始================================
+[2022-04-05 06:57:25,165] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:2496]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 06:57:25,178] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:2496]:- ==> Parameters:[]
+[2022-04-05 06:57:25,178] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:2496]:- <==  Columns: pres_num , upload_status
+[2022-04-05 06:57:25,178] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:2496]:本次无未上传处方！
+[2022-04-05 06:57:25,178] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:2496]:查询处方地址关联表:
+[2022-04-05 06:57:25,180] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:2496]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 06:57:25,197] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:2496]:- ==> Parameters:
+[2022-04-05 06:57:25,197] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:2496]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 06:57:25,197] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:2496]:上传处方定时任务结束================================
+[2022-04-05 06:58:25,156] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:2496]:上传处方定时任务开始================================
+[2022-04-05 06:58:25,167] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:2496]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 06:58:25,201] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:2496]:- ==> Parameters:[]
+[2022-04-05 06:58:25,202] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:2496]:- <==  Columns: pres_num , upload_status
+[2022-04-05 06:58:25,202] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:2496]:本次无未上传处方！
+[2022-04-05 06:58:25,202] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:2496]:查询处方地址关联表:
+[2022-04-05 06:58:25,206] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:2496]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 06:58:25,230] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:2496]:- ==> Parameters:
+[2022-04-05 06:58:25,230] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:2496]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 06:58:25,230] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:2496]:上传处方定时任务结束================================
+[2022-04-05 06:59:25,143] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:2496]:上传处方定时任务开始================================
+[2022-04-05 06:59:25,146] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:2496]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 06:59:25,161] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:2496]:- ==> Parameters:[]
+[2022-04-05 06:59:25,162] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:2496]:- <==  Columns: pres_num , upload_status
+[2022-04-05 06:59:25,162] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:2496]:本次无未上传处方！
+[2022-04-05 06:59:25,162] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:2496]:查询处方地址关联表:
+[2022-04-05 06:59:25,166] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:2496]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 06:59:25,179] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:2496]:- ==> Parameters:
+[2022-04-05 06:59:25,179] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:2496]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 06:59:25,179] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:2496]:上传处方定时任务结束================================
+[2022-04-05 07:00:25,146] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:2496]:上传处方定时任务开始================================
+[2022-04-05 07:00:25,154] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:2496]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 07:00:25,178] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:2496]:- ==> Parameters:[]
+[2022-04-05 07:00:25,178] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:2496]:- <==  Columns: pres_num , upload_status
+[2022-04-05 07:00:25,178] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:2496]:本次无未上传处方！
+[2022-04-05 07:00:25,179] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:2496]:查询处方地址关联表:
+[2022-04-05 07:00:25,182] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:2496]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 07:00:25,197] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:2496]:- ==> Parameters:
+[2022-04-05 07:00:25,197] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:2496]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 07:00:25,197] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:2496]:上传处方定时任务结束================================
+[2022-04-05 07:01:38,353] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:312]:上传处方定时任务开始================================
+[2022-04-05 07:01:38,424] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:312]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 07:01:38,438] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:312]:- ==> Parameters:[]
+[2022-04-05 07:01:38,438] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:312]:- <==  Columns: pres_num , upload_status
+[2022-04-05 07:01:38,438] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:312]:本次无未上传处方！
+[2022-04-05 07:01:38,439] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:312]:查询处方地址关联表:
+[2022-04-05 07:01:38,442] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:312]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 07:01:38,450] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:312]:- ==> Parameters:
+[2022-04-05 07:01:38,451] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:312]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 07:01:38,451] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:312]:上传处方定时任务结束================================
+[2022-04-05 07:02:38,363] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:312]:上传处方定时任务开始================================
+[2022-04-05 07:02:38,372] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:312]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 07:02:38,402] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:312]:- ==> Parameters:[]
+[2022-04-05 07:02:38,402] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:312]:- <==  Columns: pres_num , upload_status
+[2022-04-05 07:02:38,402] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:312]:本次无未上传处方！
+[2022-04-05 07:02:38,403] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:312]:查询处方地址关联表:
+[2022-04-05 07:02:38,410] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:312]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 07:02:38,433] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:312]:- ==> Parameters:
+[2022-04-05 07:02:38,434] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:312]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 07:02:38,434] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:312]:上传处方定时任务结束================================
+[2022-04-05 07:03:38,360] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:312]:上传处方定时任务开始================================
+[2022-04-05 07:03:38,379] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:312]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 07:03:38,422] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:312]:- ==> Parameters:[]
+[2022-04-05 07:03:38,423] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:312]:- <==  Columns: pres_num , upload_status
+[2022-04-05 07:03:38,423] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:312]:本次无未上传处方！
+[2022-04-05 07:03:38,423] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:312]:查询处方地址关联表:
+[2022-04-05 07:03:38,428] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:312]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 07:03:38,443] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:312]:- ==> Parameters:
+[2022-04-05 07:03:38,443] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:312]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 07:03:38,443] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:312]:上传处方定时任务结束================================
+[2022-04-05 07:04:38,361] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:312]:上传处方定时任务开始================================
+[2022-04-05 07:04:38,367] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:312]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 07:04:38,391] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:312]:- ==> Parameters:[]
+[2022-04-05 07:04:38,391] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:312]:- <==  Columns: pres_num , upload_status
+[2022-04-05 07:04:38,391] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:312]:本次无未上传处方！
+[2022-04-05 07:04:38,391] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:312]:查询处方地址关联表:
+[2022-04-05 07:04:38,394] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:312]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 07:04:38,402] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:312]:- ==> Parameters:
+[2022-04-05 07:04:38,402] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:312]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 07:04:38,402] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:312]:上传处方定时任务结束================================
+[2022-04-05 07:05:38,371] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:312]:上传处方定时任务开始================================
+[2022-04-05 07:05:38,398] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:312]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 07:05:38,427] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:312]:- ==> Parameters:[]
+[2022-04-05 07:05:38,427] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:312]:- <==  Columns: pres_num , upload_status
+[2022-04-05 07:05:38,427] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:312]:本次无未上传处方！
+[2022-04-05 07:05:38,427] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:312]:查询处方地址关联表:
+[2022-04-05 07:05:38,431] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:312]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 07:05:38,441] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:312]:- ==> Parameters:
+[2022-04-05 07:05:38,441] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:312]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 07:05:38,441] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:312]:上传处方定时任务结束================================
+[2022-04-05 07:06:38,360] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:138]:[MainProcess:312]:上传处方定时任务开始================================
+[2022-04-05 07:06:38,367] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:58]:[MainProcess:312]:- ==> executing:SELECT `mid _prescriptions`.pres_num, `mid _prescriptions`.upload_status 
+FROM `mid _prescriptions` 
+WHERE `mid _prescriptions`.upload_status BETWEEN 0 AND 10000
+[2022-04-05 07:06:38,386] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:60]:[MainProcess:312]:- ==> Parameters:[]
+[2022-04-05 07:06:38,387] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:get_pre_lists_by_statues:61]:[MainProcess:312]:- <==  Columns: pres_num , upload_status
+[2022-04-05 07:06:38,387] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:163]:[MainProcess:312]:本次无未上传处方！
+[2022-04-05 07:06:38,387] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:insert_mid_by_pres_consignee:23]:[MainProcess:312]:查询处方地址关联表:
+[2022-04-05 07:06:38,392] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:35]:[MainProcess:312]:- ==> executing:SELECT pres_consignee.pres_num, pres_consignee.addr_id, custom_addr.province, custom_addr.city, custom_addr.zone, custom_addr.addr_detail, custom_addr.consignee, custom_addr.con_tel, pres_consignee.send_goods_time, custom_addr.is_hos_addr, pres_consignee.is_write_mid 
+FROM pres_consignee, custom_addr 
+WHERE pres_consignee.addr_id = custom_addr.addr_id AND pres_consignee.is_write_mid = 0
+[2022-04-05 07:06:38,409] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:37]:[MainProcess:312]:- ==> Parameters:
+[2022-04-05 07:06:38,410] PrescriptionPushSyetem.uploadTimer:[INFO]:[HosPrescriptionService:find_un_write_pres_consignee:38]:[MainProcess:312]:- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid
+[2022-04-05 07:06:38,410] PrescriptionPushSyetem.uploadTimer:[INFO]:[views:upload_prescription_job:165]:[MainProcess:312]:上传处方定时任务结束================================

@@ -1,0 +1,56 @@
+none -- [2022-04-05 01:50:11,775] INFO Watching for file changes with StatReloader
+127.0.0.1 -- [2022-04-05 01:50:29,397] INFO "GET /management/index/ HTTP/1.1" 302 0
+127.0.0.1 -- [2022-04-05 01:50:29,501] INFO "GET /management/login/ HTTP/1.1" 200 4333
+127.0.0.1 -- [2022-04-05 01:50:29,533] INFO "GET /static/css/login.css HTTP/1.1" 200 2067
+127.0.0.1 -- [2022-04-05 01:50:29,904] INFO "GET /management/changeVerifyCode/?t=1649094629654 HTTP/1.1" 200 1317
+127.0.0.1 -- [2022-04-05 01:50:30,032] WARNING Not Found: /favicon.ico
+127.0.0.1 -- [2022-04-05 01:50:30,033] WARNING "GET /favicon.ico HTTP/1.1" 404 2238
+none -- [2022-04-05 06:54:43,951] INFO Watching for file changes with StatReloader
+none -- [2022-04-05 06:55:24,540] INFO Watching for file changes with StatReloader
+127.0.0.1 -- [2022-04-05 06:55:49,839] INFO "GET /management/index/ HTTP/1.1" 302 0
+127.0.0.1 -- [2022-04-05 06:55:49,946] INFO "GET /management/login/ HTTP/1.1" 200 4333
+127.0.0.1 -- [2022-04-05 06:55:49,969] INFO "GET /static/css/login.css HTTP/1.1" 304 0
+127.0.0.1 -- [2022-04-05 06:55:50,167] INFO "GET /management/changeVerifyCode/?t=1649112950117 HTTP/1.1" 200 1257
+127.0.0.1 -- [2022-04-05 06:55:50,369] WARNING Not Found: /favicon.ico
+127.0.0.1 -- [2022-04-05 06:55:50,370] WARNING "GET /favicon.ico HTTP/1.1" 404 2238
+127.0.0.1 -- [2022-04-05 06:56:02,489] INFO "POST /management/login/ HTTP/1.1" 302 0
+127.0.0.1 -- [2022-04-05 06:56:02,557] INFO "GET /management/index/ HTTP/1.1" 200 10470
+127.0.0.1 -- [2022-04-05 06:56:02,584] INFO "GET /static/fonts/iconfont.css HTTP/1.1" 200 6777
+127.0.0.1 -- [2022-04-05 06:56:02,638] INFO "GET /management/home/ HTTP/1.1" 200 304
+127.0.0.1 -- [2022-04-05 06:56:02,657] INFO "GET /static/fonts/iconfont.woff2?t=1648146946981 HTTP/1.1" 200 23696
+127.0.0.1 -- [2022-04-05 06:56:02,673] INFO "GET /static/css/style.css HTTP/1.1" 200 8146
+127.0.0.1 -- [2022-04-05 06:56:02,827] WARNING "GET /static/img/backstage/favicon.png HTTP/1.1" 404 1834
+127.0.0.1 -- [2022-04-05 06:56:06,616] INFO "GET /management/presUpload/ZY_home/ HTTP/1.1" 200 7016
+127.0.0.1 -- [2022-04-05 06:56:06,845] INFO "GET /management/tableData/view_table/?flag=ZY&page=1&limit=10 HTTP/1.1" 200 46
+127.0.0.1 -- [2022-04-05 06:56:11,490] INFO "GET /management/tableData/view_table/?flag=ZY&page=1&limit=10&userName=&presNum=&startDate=2022-03-25+00%3A00%3A00&endDate=2022-04-05+06%3A56%3A10 HTTP/1.1" 200 6282
+127.0.0.1 -- [2022-04-05 06:56:14,931] INFO "GET /management/presUpload/entryAddress/?flag=ZY&pres_num=ZY_2022032512410&custom_num=40659 HTTP/1.1" 200 17145
+127.0.0.1 -- [2022-04-05 06:56:14,942] INFO "GET /static/js/region.js HTTP/1.1" 200 44867
+127.0.0.1 -- [2022-04-05 06:56:15,078] INFO "GET /management/tableData/address_table/?&custom_num=40659&page=1&limit=10 HTTP/1.1" 200 46
+127.0.0.1 -- [2022-04-05 06:56:15,081] INFO "GET /management/tableData/pres_consignee/?&pres_num=ZY_2022032512410&page=1&limit=10 HTTP/1.1" 200 46
+127.0.0.1 -- [2022-04-05 06:56:16,761] INFO "GET /management/company/ HTTP/1.1" 200 262
+127.0.0.1 -- [2022-04-05 06:56:18,003] INFO "POST /management/presUpload/entryAddress/ HTTP/1.1" 200 60
+127.0.0.1 -- [2022-04-05 06:56:18,029] INFO "GET /management/tableData/address_table/?&custom_num=40659&page=1&limit=10 HTTP/1.1" 200 341
+none -- [2022-04-05 07:00:37,587] INFO Watching for file changes with StatReloader
+127.0.0.1 -- [2022-04-05 07:00:48,078] INFO "GET /management/logout/ HTTP/1.1" 302 0
+127.0.0.1 -- [2022-04-05 07:00:48,096] INFO "GET /management/login/ HTTP/1.1" 200 4333
+127.0.0.1 -- [2022-04-05 07:00:51,558] ERROR Internal Server Error: /management/changeVerifyCode/
+Traceback (most recent call last):
+  File "C:\Users\vincent\PycharmProjects\zhyf_view_mode_interface_login\PrescriptionPushSystem\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\vincent\PycharmProjects\zhyf_view_mode_interface_login\PrescriptionPushSystem\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\vincent\PycharmProjects\zhyf_view_mode_interface_login\PrescriptionPushSystem\management\views.py", line 65, in change_verify_code
+    im = generate_code.gene_code()
+  File "C:\Users\vincent\PycharmProjects\zhyf_view_mode_interface_login\PrescriptionPushSystem\lib\backstage_quote\generate_code.py", line 55, in gene_code
+    font = ImageFont.truetype(font_path, 20)  # 验证码的字体和字体大小
+  File "C:\Users\vincent\PycharmProjects\zhyf_view_mode_interface_login\PrescriptionPushSystem\venv\lib\site-packages\PIL\ImageFont.py", line 878, in truetype
+    return freetype(font)
+  File "C:\Users\vincent\PycharmProjects\zhyf_view_mode_interface_login\PrescriptionPushSystem\venv\lib\site-packages\PIL\ImageFont.py", line 875, in freetype
+    return FreeTypeFont(font, size, index, encoding, layout_engine)
+  File "C:\Users\vincent\PycharmProjects\zhyf_view_mode_interface_login\PrescriptionPushSystem\venv\lib\site-packages\PIL\ImageFont.py", line 217, in __init__
+    font_bytes_path = font if isinstance(font, bytes) else font.encode()
+AttributeError: 'WindowsPath' object has no attribute 'encode'
+127.0.0.1 -- [2022-04-05 07:00:51,564] ERROR "GET /management/changeVerifyCode/?t=1649113248270 HTTP/1.1" 500 91318
+none -- [2022-04-05 07:07:12,810] INFO Watching for file changes with StatReloader
+127.0.0.1 -- [2022-04-05 07:07:17,334] INFO "GET /management/login/ HTTP/1.1" 200 4333
+127.0.0.1 -- [2022-04-05 07:07:17,495] INFO "GET /management/changeVerifyCode/?t=1649113637449 HTTP/1.1" 200 1040

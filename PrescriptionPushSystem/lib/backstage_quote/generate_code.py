@@ -7,14 +7,16 @@
   Last Modified by: vincent
   Last Modified time: 2022/4/3 3:14
 """
+import os
 import random
 import string
 
 from PIL import Image, ImageFont, ImageDraw
 
-font_path = 'static/fonts/ARIAL.TTF'  # 字体的位置，不同版本的系统会有不同
-# font_path = '../../static/fonts/ARIAL.TTF'  # 字体的位置，不同版本的系统会有不同
-# font_path = '/Library/Fonts/Hanzipen.ttc'
+from PrescriptionPushSystem.settings import BASE_DIR
+
+font_dir = BASE_DIR / 'static/fonts'
+font_path = os.path.join(font_dir, "ARIAL.TTF")
 number = 4  # 生成验证码的位数
 size = (70, 25)  # 生成验证码图片的高度和宽度
 bgcolor = '#BFBFBF'  # 背景颜色，默认为白色
@@ -51,6 +53,7 @@ def gene_line(draw, width, height):
 def gene_code(save_path='', filename=''):
     width, height = size  # 宽和高
     image = Image.new('RGBA', (width, height), bgcolor)  # 创建图片
+    print(font_path)
     font = ImageFont.truetype(font_path, 20)  # 验证码的字体和字体大小
     # font = ImageFont.truetype(25)                         # 验证码的字体和字体大小
     draw = ImageDraw.Draw(image)  # 创建画笔
