@@ -462,6 +462,18 @@ def drop_db(en):
 
 
 if __name__ == '__main__':
+    # 开发环境可以使用
     es = get_session('local')
     init_db(es[0])                    # 执行创建
     # drop_db(es[0])
+
+    # 生产环境部署完成用来初始化
+    # connect_strings = "mysql+mysqlconnector://root:zhyf@localhost:3306/zhyf_test?charset=utf8"
+    # en = create_engine(connect_strings, max_overflow=0, pool_size=5, pool_timeout=30, pool_recycle=3600)
+    # choice = input("需要做数据库初始化吗？(y/n)")
+    # if choice == 'y':
+    #     init_db(en)  # 执行创建
+    #     print("数据库初始化完毕！")
+    # elif choice == 'n':
+    #     drop_db(en)  # 执行删除
+    #     print("你已成功删库！可以跑路了土贼！")
