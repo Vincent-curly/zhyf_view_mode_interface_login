@@ -68,12 +68,12 @@ class Prescription(Base):
     """
     处方表类
     """
-    __tablename__ = 'mid _prescriptions'
+    __tablename__ = 'mid_prescriptions'
     pres_num = Column(String(50), nullable=False, primary_key=True, comment='处方单号')
     pres_time = Column(String(25), comment='处方生成时间')
     treat_card = Column(String(50), comment='诊疗卡号')
     reg_num = Column(String(50), comment='挂单号')
-    province = Column(String(10), comment='省份')
+    provinces = Column(String(10), comment='省份')
     city = Column(String(10), comment='城市')
     zone = Column(String(10), comment='区')
     addr_detail = Column(String(120), comment='收货地址')
@@ -178,7 +178,7 @@ class Address(Base):
     custom_num = Column(String(50), nullable=False, comment='患者id,标识唯一患者')
     consignee = Column(String(30), comment='收货人')
     con_tel = Column(String(50), comment='收货人电话')
-    province = Column(String(10), comment='省份')
+    provinces = Column(String(10), comment='省份')
     city = Column(String(10), comment='城市')
     zone = Column(String(10), comment='区县')
     addr_detail = Column(String(50), nullable=False, comment='详细地址')

@@ -26,7 +26,7 @@ def find_un_write_pres_consignee():
     """查询处方地址关联表 consignee 获取已关联地址但未写入中间表的信息列表吗 is_write_mid=0 """
     uw_records = []
     session = get_session('local')[1]
-    uw_records_query = session.query(Consignee.pres_num, Consignee.addr_id, Address.province, Address.city,
+    uw_records_query = session.query(Consignee.pres_num, Consignee.addr_id, Address.provinces, Address.city,
                                      Address.zone, Address.addr_detail, Address.consignee, Address.con_tel,
                                      Consignee.send_goods_time, Address.is_hos_addr, Consignee.is_write_mid).filter(
         and_(Consignee.addr_id == Address.addr_id, Consignee.is_write_mid == 0))
@@ -35,7 +35,7 @@ def find_un_write_pres_consignee():
     logger_timer.info('- ==> executing:%s' % uw_records_query_sql)
     uw_records_lists = uw_records_query.all()
     logger_timer.info("- ==> Parameters:")
-    logger_timer.info("- <==  Columns: pres_num , addr_id , province , city , zone , addr_detail , "
+    logger_timer.info("- <==  Columns: pres_num , addr_id , provinces , city , zone , addr_detail , "
                       "consignee , con_tel , send_goods_time , is_hos_addr , is_write_mid")
     for record in uw_records_lists:
         logger_timer.info("- <==  Row: {}".format(record))
@@ -119,7 +119,7 @@ def build_upload_prescription_req(pres):
     content += "<order_time>" + pres_info.pres_time + "</order_time>"
     content += "<treat_card>" + pres_info.treat_card + "</treat_card>"
     content += "<reg_num>" + pres_info.reg_num + "</reg_num>"
-    content += "<addr_str>" + pres_info.province + "," + pres_info.city + "," + pres_info.zone + "," + \
+    content += "<addr_str>" + pres_info.provinces + "," + pres_info.city + "," + pres_info.zone + "," + \
                pres_info.addr_detail + "</addr_str>"
     content += "<consignee>" + pres_info.consignee + "</consignee>"
     content += "<con_tel>" + pres_info.con_tel + "</con_tel>"
@@ -256,7 +256,7 @@ def insert_mid_prescription(prescription):
     logger_timer.info("插入中间表==>处方表：")
     prescription_info = Prescription(
         pres_num=prescription['pres_num'], pres_time=prescription['pres_time'], treat_card=prescription['treat_card'],
-        reg_num=prescription['reg_num'], province=prescription['province'], city=prescription['city'],
+        reg_num=prescription['reg_num'], provinces=prescription['provinces'], city=prescription['city'],
         zone=prescription['zone'], addr_detail=prescription['addr_detail'], consignee=prescription['consignee'],
         con_tel=prescription['con_tel'], send_goods_time=prescription['send_goods_time'],
         user_name=prescription['user_name'], age=prescription['age'], gender=prescription['gender'],
