@@ -4,3 +4,4 @@ Pillow==9.1.0
 mysql-connector==2.2.9
 APScheduler==3.9.1
 requests==2.27.1
+cx-Oracle==8.3.0

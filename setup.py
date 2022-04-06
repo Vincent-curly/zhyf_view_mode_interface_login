@@ -45,6 +45,7 @@ setup(
         'tzlocal==4.2',
         'urllib3==1.26.9',
         'zipp==3.7.0',
+        'cx-Oracle==8.3.0',
     ],
     classifiers=[
         'Environment :: Web Environment',
