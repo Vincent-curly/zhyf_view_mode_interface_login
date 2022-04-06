@@ -92,7 +92,6 @@ class Prescription(Base):
     per_pack_dose = Column(Integer, comment='每包多少ml')
     type = Column(Integer, comment='处方类型 0:中药，1:西药，2:膏方，3:丸剂，5:散剂，7:免煎颗粒')
     is_within = Column(Integer, comment='服用方式 0 内服，1 外用')
-    other_pres_num = Column(String(50), nullable=False, comment='医院处方号')
     special_instru = Column(String(100), comment='处方特殊说明 诊断信息')
     bed_num = Column(String(50), comment='床位号')
     hos_depart = Column(String(50), comment='医院科室')

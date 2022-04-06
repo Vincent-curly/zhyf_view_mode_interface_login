@@ -255,8 +255,8 @@ def table_data(request, type):
         data_count += mid_pres_datas.count()
         for mid_pres_obj in mid_pres_datas.all():
             logger.info("- <== Row: {} - {}".format(mid_pres_obj.pres_num, mid_pres_obj.to_json()))
-            addr_str = mid_pres_obj.province + mid_pres_obj.city + mid_pres_obj.zone + mid_pres_obj.addr_detail
-            mid_pres_obj.to_json()['addr_str'] = addr_str
+            addr_info = mid_pres_obj.provinces + mid_pres_obj.city + mid_pres_obj.zone + mid_pres_obj.addr_detail
+            mid_pres_obj.to_json()['addr_str'] = addr_info
             lis.append(mid_pres_obj.to_json())
             # print(mid_pres_obj.to_json())
         # print(lis)
@@ -332,7 +332,7 @@ def table_data(request, type):
         data_count += addr_datas.count()
         for addr_data in addr_datas.all():
             logger.info("- <== Row: {},{} - {}".format(addr_data.addr_id, addr_data.custom_num, addr_data.to_json()))
-            province_city_zone = addr_data.province + addr_data.city + addr_data.zone
+            province_city_zone = addr_data.provinces + addr_data.city + addr_data.zone
             addr_data.to_json()['province_city_zone'] = province_city_zone
             lis.append(addr_data.to_json())
     elif type == 'pres_consignee':
@@ -346,7 +346,7 @@ def table_data(request, type):
             addr_info = session.query(Address).filter(Address.addr_id == pres_consignee_datas.addr_id).first()
             # print(addr_info)
             # print(addr_info.to_json())
-            province_city_zone = addr_info.province + addr_info.city + addr_info.zone
+            province_city_zone = addr_info.provinces + addr_info.city + addr_info.zone
             pres_consignee_datas.to_json().update(addr_info.to_json())
             # print(pres_consignee_datas.to_json())
             pres_consignee_datas.to_json()['province_city_zone'] = province_city_zone
@@ -405,7 +405,7 @@ def pres_upload(request, type):
                 address.custom_num = request.POST.get('treatCard')
                 address.consignee = request.POST.get('consignee')
                 address.con_tel = request.POST.get('conTel')
-                address.province = request.POST.get('comProvince')
+                address.provinces = request.POST.get('comProvince')
                 address.city = request.POST.get('comCity')
                 address.zone = request.POST.get('comZone')
                 address.addr_detail = request.POST.get('addr_str')
@@ -523,7 +523,7 @@ def address_manage(request, type):
             session = get_session('local')[1]
             query = session.query(Address).filter(Address.addr_id == addr_id).update({
                 Address.consignee: request.POST.get('consignee'), Address.con_tel: request.POST.get('con_tel'),
-                Address.province: request.POST.get('comProvince'), Address.city: request.POST.get('comCity'),
+                Address.provinces: request.POST.get('comProvince'), Address.city: request.POST.get('comCity'),
                 Address.zone: request.POST.get('comZone'), Address.addr_detail: request.POST.get('addrStr'),
                 Address.is_hos_addr: request.POST.get('is_hos_addr')})
             logger_timer.info("地址编辑,地址编号:%s", addr_id)

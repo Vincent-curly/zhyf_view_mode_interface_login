@@ -141,7 +141,7 @@ def build_upload_prescription_req(pres):
     content += "<per_pack_dose>" + (str(pres_info.per_pack_dose) if pres_info.per_pack_dose else '200'
                                     ) + "</per_pack_dose>"
     content += "<type>" + str(pres_info.type) + "</type>"
-    content += "<other_pres_num>" + pres_info.other_pres_num + "</other_pres_num>"
+    content += "<other_pres_num>" + pres_info.pres_num + "</other_pres_num>"
     content += "<special_instru>" + pres_info.special_instru + "</special_instru>"
     content += "<is_within>" + str(pres_info.is_within) + "</is_within>"
     content += "<bed_num>" + (str(pres_info.bed_num) if pres_info.bed_num else '') + "</bed_num>"
@@ -263,12 +263,11 @@ def insert_mid_prescription(prescription):
         tel=prescription['tel'], is_suffering=prescription['is_suffering'], amount=prescription['amount'],
         suffering_num=prescription['suffering_num'], ji_fried=prescription['ji_fried'],
         per_pack_num=prescription['per_pack_num'], per_pack_dose=prescription['per_pack_dose'], type=prescription['type'],
-        is_within=prescription['is_within'], other_pres_num=prescription.get('other_pres_num', prescription['pres_num']),
-        special_instru=prescription['special_instru'], bed_num=prescription.get('bed_num'),
-        hos_depart=prescription.get('hos_depart'), hospital_num=prescription.get('hospital_num'),
-        disease_code=prescription.get('disease_code'), doctor=prescription['doctor'],
-        prescript_remark=prescription['prescript_remark'], is_hos_addr=prescription['is_hos_addr'],
-        medication_methods=prescription['medication_methods'],
+        is_within=prescription['is_within'], special_instru=prescription['special_instru'],
+        bed_num=prescription.get('bed_num'), hos_depart=prescription.get('hos_depart'),
+        hospital_num=prescription.get('hospital_num'), disease_code=prescription.get('disease_code'),
+        doctor=prescription['doctor'], prescript_remark=prescription['prescript_remark'],
+        is_hos_addr=prescription['is_hos_addr'], medication_methods=prescription['medication_methods'],
         medication_instruction=prescription['medication_instruction'], source=prescription['source']
     )
     session.add(prescription_info)
