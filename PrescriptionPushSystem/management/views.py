@@ -355,7 +355,7 @@ def table_data(request, type):
         addr_datas = session.query(Address).filter(Address.custom_num == custom_num).order_by(Address.addr_id)
         sql = str(
             addr_datas.statement.compile(dialect=mysql.dialect(), compile_kwargs={"literal_binds": True}))
-        logger.info("获取患者地址信息：")
+        logger.info("获取患者地址信息！--- Custom_num:{}".format(custom_num))
         logger.info('==> executing:%s' % sql)
         logger.info("==> Parameters:%s" % addr_datas.all())
         data_count += addr_datas.count()
@@ -369,8 +369,7 @@ def table_data(request, type):
         pres_consignee_datas = session.query(Consignee).filter(Consignee.pres_num == pres_num).first()
         # print(pres_consignee_datas)
         # print(pres_consignee_datas.to_json())
-        logger.info("查询处方与地址关联信息：")
-        logger.info('==> 查询处方号:%s' % pres_num)
+        logger.info("查询处方与地址关联信息！查询处方号:{}".format(pres_num))
         if pres_consignee_datas:
             addr_info = session.query(Address).filter(Address.addr_id == pres_consignee_datas.addr_id).first()
             # print(addr_info)
@@ -409,6 +408,7 @@ def update_pass(request):
             try:
                 session.commit()
                 context['status'] = 'success'
+                logger.info(context)
             except SQLAlchemyError as e:
                 context['status'] = 'fail'
                 context['message'] = str(e) + "\n请联系管理员"
@@ -440,10 +440,8 @@ def pres_upload(request, type):
                 address.addr_detail = request.POST.get('addr_str')
                 address.is_hos_addr = request.POST.get('is_hos_addr')
                 session.add(address)
-                # logger_timer.info(address)
-                logger_timer.info('==> 保存联系人:')
-                logger_timer.info("==> custom_num:%s" % request.POST.get('treatCard'))
-                logger_timer.info("==> 地址信息:{}".format(address.to_json()))
+                logger.info("==> 保存联系人！---custom_num:{}".format(request.POST.get('treatCard')))
+                logger.info("==> 地址信息:{}".format(address.to_json()))
                 try:
                     session.commit()
                     context['status'] = 'success'
@@ -452,7 +450,7 @@ def pres_upload(request, type):
                     session.rollback()
                     context['status'] = 'fail'
                     context['message'] = str(e) + "\n请联系管理员！"
-                logger_timer.info(context)
+                logger.info(context)
             else:
                 context['status'] = 'fail'
                 context['message'] = '每位患者最多保存5个地址！'
@@ -490,9 +488,8 @@ def pres_upload(request, type):
         pres_consignee.send_goods_time = request.POST.get('send_good_time')
         session = get_session('local')[1]
         session.add(pres_consignee)
-        logger_timer.info("保存处方地址:")
-        logger_timer.info("==> 处方号:%s" % request.POST.get('presNum'))
-        logger_timer.info("==> 关联地址信息:{}".format(pres_consignee.to_json()))
+        logger.info("保存处方地址！处方号:%s" % request.POST.get('presNum'))
+        logger.info("==> 处方地址关联信息:{}".format(pres_consignee.to_json()))
         try:
             session.commit()
             context['status'] = 'success'
@@ -501,7 +498,7 @@ def pres_upload(request, type):
             session.rollback()
             context['status'] = 'fail'
             context['message'] = str(e)
-        logger_timer.info(context)
+        logger.info(context)
         session.close()
         return HttpResponse(json.dumps(context, ensure_ascii=False), content_type="application/json")
     if type == 'MZ_home':
@@ -532,8 +529,8 @@ def address_manage(request, type):
         addr_id_del = request.POST.get('delData')
         session = get_session('local')[1]
         addr_del = session.query(Address).filter(Address.addr_id == addr_id_del)
-        logger_timer.info("地址删除,地址编号:%s", addr_id_del)
-        logger_timer.info("==> Parameters:{}".format(addr_del.first().to_json()))
+        logger.info("地址删除,删除的地址信息如下:")
+        logger.info("==> Parameters:{}".format(addr_del.first().to_json()))
         addr_del.delete()
         try:
             session.commit()
@@ -543,28 +540,31 @@ def address_manage(request, type):
             session.rollback()
             context['status'] = 'fail'
             context['message'] = str(e) + "\n请联系管理员！"
-        logger_timer.info(context)
+        logger.info(context)
         session.close()
         return HttpResponse(json.dumps(context, ensure_ascii=False), content_type="application/json")
     if type == 'addressEdit':
         if request.method == 'POST':
             addr_id = request.POST.get('addressId')
             session = get_session('local')[1]
+            old_address = session.query(Address).filter(Address.addr_id == addr_id).first()
             query = session.query(Address).filter(Address.addr_id == addr_id).update({
                 Address.consignee: request.POST.get('consignee'), Address.con_tel: request.POST.get('con_tel'),
                 Address.provinces: request.POST.get('comProvince'), Address.city: request.POST.get('comCity'),
                 Address.zone: request.POST.get('comZone'), Address.addr_detail: request.POST.get('addrStr'),
                 Address.is_hos_addr: request.POST.get('is_hos_addr')})
-            logger_timer.info("地址编辑,地址编号:%s", addr_id)
+            logger.info("地址编辑,旧地址信息:{}".format(old_address.to_json()))
             try:
                 session.commit()
                 context['status'] = 'success'
                 context['message'] = '地址修改成功！'
+                # new_address = session.query(Address).filter(Address.addr_id == addr_id).all()
+                # logger.info("新地址信息:{}".format(new_address[0].to_json()))
             except SQLAlchemyError as e:
                 session.rollback()
                 context['status'] = 'fail'
                 context['message'] = str(e) + "\n请联系管理员！"
-            logger_timer.info(context)
+            logger.info(context)
             session.close()
             return HttpResponse(json.dumps(context, ensure_ascii=False), content_type="application/json")
         addr_id = request.GET.get('addrId')
