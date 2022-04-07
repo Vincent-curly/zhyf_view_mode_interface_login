@@ -12,7 +12,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 from sqlalchemy import and_
-from sqlalchemy.dialects import mysql
+from sqlalchemy.dialects import mysql, oracle
 from sqlalchemy.exc import SQLAlchemyError
 
 from lib.backstage_quote import generate_code
@@ -275,15 +275,27 @@ def table_data(request, type):
             if pres_num:
                 query_text.append(MZPrescriptionsView.pres_num == pres_num)
             if start_date and end_date:
+                # 视图是 mysql
                 query_text.append(MZPrescriptionsView.pres_time.between(start_date, end_date))
+                # 视图是 Oracle
+                # query_text.append(MZPrescriptionsView.pres_time.between(
+                #     datetime.datetime.strptime(str(start_date), "%Y-%m-%d %H:%M:%S"),
+                #     datetime.datetime.strptime(str(end_date), "%Y-%m-%d %H:%M:%S")))
             if len(query_text) > 0:
                 mz_datas = session_per.query(MZPrescriptionsView).filter(*query_text)
             else:
+                # 视图是 mysql
                 mz_datas = session_per.query(MZPrescriptionsView).filter(
                     MZPrescriptionsView.pres_time.between(time_start, time_end))
-            sql = str(mz_datas.statement.compile(dialect=mysql.dialect(), compile_kwargs={"literal_binds": True}))
+                # 视图是 Oracle
+                # mz_datas = session_per.query(MZPrescriptionsView).filter(
+                #     MZPrescriptionsView.pres_time.between(
+                #         datetime.datetime.strptime(str(time_start), "%Y-%m-%d %H:%M:%S"),
+                #         datetime.datetime.strptime(str(time_end), "%Y-%m-%d %H:%M:%S")))
+            # sql = str(mz_datas.statement.compile(dialect=mysql.dialect(), compile_kwargs={"literal_binds": True}))
+            # sql = str(mz_datas.statement.compile(dialect=oracle.dialect(), compile_kwargs={"literal_binds": True}))
             logger.info("查询门诊视图获取待上传处方：")
-            logger.info('==> executing:%s' % sql)
+            # logger.info('==> executing:%s' % sql)
             logger.info("==> Parameters:{}".format(mz_datas.all()))
             data_count += mz_datas.count()
             for mz_obj in mz_datas.all():
@@ -300,15 +312,26 @@ def table_data(request, type):
             if pres_num:
                 query_text.append(ZYPrescriptionsView.pres_num == pres_num)
             if start_date and end_date:
+                # Oracle 视图
+                # query_text.append(ZYPrescriptionsView.pres_time.between(
+                #     datetime.datetime.strptime(str(start_date), "%Y-%m-%d %H:%M:%S"),
+                #     datetime.datetime.strptime(str(end_date), "%Y-%m-%d %H:%M:%S")))
+                # mysql 视图
                 query_text.append(ZYPrescriptionsView.pres_time.between(start_date, end_date))
             if len(query_text) > 0:
                 zy_datas = session_per.query(ZYPrescriptionsView).filter(*query_text)
             else:
+                # 视图是 mysql
                 zy_datas = session_per.query(ZYPrescriptionsView).filter(
                     ZYPrescriptionsView.pres_time.between(time_start, time_end))
-            sql = str(zy_datas.statement.compile(dialect=mysql.dialect(), compile_kwargs={"literal_binds": True}))
+                # Oracle 视图
+                # zy_datas = session_per.query(ZYPrescriptionsView).filter(
+                #     ZYPrescriptionsView.pres_time.between(
+                #         datetime.datetime.strptime(str(time_start), "%Y-%m-%d %H:%M:%S"),
+                #         datetime.datetime.strptime(str(time_end), "%Y-%m-%d %H:%M:%S")))
+            # sql = str(zy_datas.statement.compile(dialect=mysql.dialect(), compile_kwargs={"literal_binds": True}))
             logger.info("查询住院视图获取待上传处方：")
-            logger.info('==> executing:%s' % sql)
+            # logger.info('==> executing:%s' % sql)
             logger.info("==> Parameters:%s" % zy_datas.all())
             data_count += zy_datas.count()
             for zy_obj in zy_datas.all():
