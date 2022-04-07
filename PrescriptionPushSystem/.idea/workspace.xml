@@ -10,10 +10,7 @@
       <change afterPath="$PROJECT_DIR$/logs/localhost-2022-04-07.log" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/logs/web-2022-04-06.log" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/logs/web-2022-04-07.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/prescription_services/HosPrescriptionService.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/prescription_services/HosPrescriptionService.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/management/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/management/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploadTimer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/uploadTimer/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -182,7 +179,7 @@
       <workItem from="1649153881640" duration="1010000" />
       <workItem from="1649208137522" duration="14444000" />
       <workItem from="1649250078474" duration="13678000" />
-      <workItem from="1649303826664" duration="14695000" />
+      <workItem from="1649303826664" duration="15304000" />
     </task>
     <task id="LOCAL-00001" summary="更新打包">
       <created>1649113947626</created>
@@ -261,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649338562169</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="根据实际业务逻辑调整：中间处方表和明细表一起commit,except SQLAlchemyError则一起rollback，防止明细表与中间表写入状态不一致，只有两者同时commit成功才更新consignee表的写状态">
+      <created>1649343516634</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1649343516634</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,7 +295,8 @@
     <MESSAGE value="对数据库初始化操作做修改" />
     <MESSAGE value="添加版本控制" />
     <MESSAGE value="门诊住院待上传处方查询增加时间降序" />
-    <option name="LAST_COMMIT_MESSAGE" value="门诊住院待上传处方查询增加时间降序" />
+    <MESSAGE value="根据实际业务逻辑调整：中间处方表和明细表一起commit,except SQLAlchemyError则一起rollback，防止明细表与中间表写入状态不一致，只有两者同时commit成功才更新consignee表的写状态" />
+    <option name="LAST_COMMIT_MESSAGE" value="根据实际业务逻辑调整：中间处方表和明细表一起commit,except SQLAlchemyError则一起rollback，防止明细表与中间表写入状态不一致，只有两者同时commit成功才更新consignee表的写状态" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PrescriptionPushSystem$generate_code.coverage" NAME="generate_code Coverage Results" MODIFIED="1648928049887" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/backstage_quote" />

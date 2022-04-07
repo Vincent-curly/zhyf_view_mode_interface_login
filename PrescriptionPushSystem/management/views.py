@@ -295,10 +295,10 @@ def table_data(request, type):
                 #         datetime.datetime.strptime(str(time_start), "%Y-%m-%d %H:%M:%S"),
                 #         datetime.datetime.strptime(str(time_end), "%Y-%m-%d %H:%M:%S"))).order_by(
                 #     MZPrescriptionsView.pres_time.desc())
-            # sql = str(mz_datas.statement.compile(dialect=mysql.dialect(), compile_kwargs={"literal_binds": True}))
-            # sql = str(mz_datas.statement.compile(dialect=oracle.dialect(), compile_kwargs={"literal_binds": True}))
+            # 打印查询语句在 mysql 中可以使用，当视图是 Oracle 时，要启用 Oracle 对应的查询，此时打印查询语句部分需要注释掉
+            sql = str(mz_datas.statement.compile(dialect=mysql.dialect(), compile_kwargs={"literal_binds": True}))
             logger.info("查询门诊视图获取待上传处方：")
-            # logger.info('==> executing:%s' % sql)
+            logger.info('==> executing:%s' % sql)
             logger.info("==> Parameters:{}".format(mz_datas.all()))
             data_count += mz_datas.count()
             for mz_obj in mz_datas.all():
@@ -335,9 +335,9 @@ def table_data(request, type):
                 #         datetime.datetime.strptime(str(time_start), "%Y-%m-%d %H:%M:%S"),
                 #         datetime.datetime.strptime(str(time_end), "%Y-%m-%d %H:%M:%S"))).order_by(
                 #     ZYPrescriptionsView.pres_time.desc())
-            # sql = str(zy_datas.statement.compile(dialect=mysql.dialect(), compile_kwargs={"literal_binds": True}))
+            sql = str(zy_datas.statement.compile(dialect=mysql.dialect(), compile_kwargs={"literal_binds": True}))
             logger.info("查询住院视图获取待上传处方：")
-            # logger.info('==> executing:%s' % sql)
+            logger.info('==> executing:%s' % sql)
             logger.info("==> Parameters:%s" % zy_datas.all())
             data_count += zy_datas.count()
             for zy_obj in zy_datas.all():
