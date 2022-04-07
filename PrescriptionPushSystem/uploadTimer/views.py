@@ -7,7 +7,7 @@ from sqlalchemy import literal
 from sqlalchemy.dialects import mysql
 
 from lib.prescription_services.HosPrescriptionService import find_un_write_pres_consignee, get_pre_lists_by_statues, \
-    insert_mid_prescription, insert_mid_prescription_detail, update_consignee_status, upload_prescriptions
+    insert_mid_prescription, update_consignee_status, upload_prescriptions
 from management.models import get_session, MZPrescriptionsView, MZDetailsView, ZYPrescriptionsView, ZYDetailsView
 
 logger_timer = logging.getLogger('PrescriptionPushSyetem.uploadTimer')
@@ -20,7 +20,7 @@ def time_out():
 
 def insert_mid_by_pres_consignee():
     pres_detail = []
-    logger_timer.info("查询处方地址关联表:")
+    logger_timer.info("查询处方地址关联表,获取未写入处方中间表和明细表的处方信息:")
     pres_consignee_lists = find_un_write_pres_consignee()
     if pres_consignee_lists:
         session = get_session('per')[1]
@@ -85,6 +85,7 @@ def insert_mid_by_pres_consignee():
                           "source"
             pres_query_sql = str(pres_query.statement.compile(dialect=mysql.dialect(),
                                                               compile_kwargs={"literal_binds": True}))
+            logger_timer.info('从视图中查询处方信息,查询处方号:{}'.format(pres_consignee_list['pres_num']))
             logger_timer.info('- ==> executing:%s' % pres_query_sql)
             pres_data = pres_query.first()
             logger_timer.info("- ==> Parameters:")
@@ -93,6 +94,7 @@ def insert_mid_by_pres_consignee():
             if pres_data:
                 detail_query_sql = str(detail_query.statement.compile(
                     dialect=mysql.dialect(), compile_kwargs={"literal_binds": True}))
+                logger_timer.info('从视图中查询处方药材详情,查询处方号:{}'.format(pres_consignee_list['pres_num']))
                 detail_datas = detail_query.all()
                 if detail_datas:
                     logger_timer.info('- ==> executing:%s' % detail_query_sql)
@@ -105,18 +107,19 @@ def insert_mid_by_pres_consignee():
                     prescription = dict(zip(pres_data.keys(), pres_data))
                     prescription.update(pres_consignee_list)
                     logger_timer.info("将要插入中间表的处方信息:{}".format(prescription))
-                    insert_pres_res = insert_mid_prescription(prescription)
                     logger_timer.info("将要插入中间表的处方详情:{}".format(pres_detail))
-                    insert_detail_res = insert_mid_prescription_detail(pres_detail)
-                    if insert_pres_res['status'] == 'success' and insert_detail_res['status'] == 'success':
-                        mid_res = update_consignee_status(pres_consignee_list['pres_num'])
-                        if mid_res['status'] != 'success':
-                            message = "将处方插入中间表发生异常！"
-                            # send_remind_message(pres_consignee_list['pres_num'], message)
+                    insert_mid_pres_res = insert_mid_prescription(prescription, pres_detail)
+                    if insert_mid_pres_res['status'] == 'success':
+                        logger_timer.info("处方中间表和处方明细表插入成功！{}".format(insert_mid_pres_res))
+                        consignee_update_res = update_consignee_status(pres_consignee_list['pres_num'])
+                        if consignee_update_res['status'] == 'success':
+                            logger_timer.info('写入中间表状态更新成功！{}'.format(consignee_update_res))
                         else:
-                            continue
+                            logger_timer.info('写入中间表状态更新失败！{}'.format(consignee_update_res))
                     else:
-                        continue
+                        logger_timer.info("处方中间表和处方明细表写入异常！{}".format(insert_mid_pres_res))
+                        message = "将处方插入中间表发生异常！"
+                        # send_remind_message(pres_consignee_list['pres_num'], message)
                 else:
                     message = "从医院查询处方详情为空！"
                     logger_timer.error("{} 处方号：{}".format(message, pres_consignee_list['pres_num']))

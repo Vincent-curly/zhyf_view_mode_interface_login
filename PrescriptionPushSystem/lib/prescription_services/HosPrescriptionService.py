@@ -250,10 +250,11 @@ def update_prescription_statues(pres_num, order_id='', describe=''):
     session.close()
 
 
-def insert_mid_prescription(prescription):
+def insert_mid_prescription(prescription, pres_details):
     message = {}
-    session = get_session('local')[1]
-    logger_timer.info("插入中间表==>处方表：")
+    pres_detail_lists = []
+    session_pre = get_session('local')[1]
+    session_detail = get_session('local')[1]
     prescription_info = Prescription(
         pres_num=prescription['pres_num'], pres_time=prescription['pres_time'], treat_card=prescription['treat_card'],
         reg_num=prescription['reg_num'], provinces=prescription['provinces'], city=prescription['city'],
@@ -270,25 +271,8 @@ def insert_mid_prescription(prescription):
         is_hos_addr=prescription['is_hos_addr'], medication_methods=prescription['medication_methods'],
         medication_instruction=prescription['medication_instruction'], source=prescription['source']
     )
-    session.add(prescription_info)
-    try:
-        session.commit()
-        message['status'] = 'success'
-        logger_timer.info("处方成功插入中间表！{}".format(message))
-    except SQLAlchemyError as e:
-        session.rollback()
-        message['status'] = 'fail'
-        logger_timer.info("处方插入中间表失败！{}".format(message))
-        logger_timer.error(str(e))
-    session.close()
-    return message
+    session_pre.add(prescription_info)
 
-
-def insert_mid_prescription_detail(pres_details):
-    message = {}
-    pres_detail_lists = []
-    session = get_session('local')[1]
-    logger_timer.info("插入中间表==>处方明细表：")
     for pres_detail in pres_details:
         detail_info = PresDetails(
             pres_num=pres_detail['pres_num'], goods_num=pres_detail['goods_num'], medicines=pres_detail['medicines'],
@@ -298,17 +282,19 @@ def insert_mid_prescription_detail(pres_details):
             MedPerDay=pres_detail.get('MedPerDay'), MedPerDos=pres_detail.get('MedPerDos')
         )
         pres_detail_lists.append(detail_info)
-    session.add_all(pres_detail_lists)
+    session_detail.add_all(pres_detail_lists)
     try:
-        session.commit()
+        logger_timer.info("插入处方中间表和处方明细表：")
+        session_pre.commit()
+        session_detail.commit()
         message['status'] = 'success'
-        logger_timer.info("处方详情成功插入中间处方明细表！{}".format(message))
     except SQLAlchemyError as e:
-        session.rollback()
+        session_pre.rollback()
+        session_detail.rollback()
         message['status'] = 'fail'
-        logger_timer.info("处方详情插入中间处方明细表失败！{}".format(message))
         logger_timer.error(str(e))
-    session.close()
+    session_pre.close()
+    session_detail.close()
     return message
 
 
@@ -321,11 +307,9 @@ def update_consignee_status(pres_num):
     try:
         session.commit()
         message['status'] = 'success'
-        logger_timer.info('写入中间表状态更新成功！{}'.format(message))
     except SQLAlchemyError as e:
         session.rollback()
         message['status'] = 'fail'
-        logger_timer.info('写入中间表状态更新失败！{}'.format(message))
         logging.error(str(e))
     session.close()
     return message
