@@ -282,16 +282,19 @@ def table_data(request, type):
                 #     datetime.datetime.strptime(str(start_date), "%Y-%m-%d %H:%M:%S"),
                 #     datetime.datetime.strptime(str(end_date), "%Y-%m-%d %H:%M:%S")))
             if len(query_text) > 0:
-                mz_datas = session_per.query(MZPrescriptionsView).filter(*query_text)
+                mz_datas = session_per.query(MZPrescriptionsView).filter(*query_text).order_by(
+                    MZPrescriptionsView.pres_time.desc())
             else:
                 # 视图是 mysql
                 mz_datas = session_per.query(MZPrescriptionsView).filter(
-                    MZPrescriptionsView.pres_time.between(time_start, time_end))
+                    MZPrescriptionsView.pres_time.between(time_start, time_end)).order_by(
+                    MZPrescriptionsView.pres_time.desc())
                 # 视图是 Oracle
                 # mz_datas = session_per.query(MZPrescriptionsView).filter(
                 #     MZPrescriptionsView.pres_time.between(
                 #         datetime.datetime.strptime(str(time_start), "%Y-%m-%d %H:%M:%S"),
-                #         datetime.datetime.strptime(str(time_end), "%Y-%m-%d %H:%M:%S")))
+                #         datetime.datetime.strptime(str(time_end), "%Y-%m-%d %H:%M:%S"))).order_by(
+                #     MZPrescriptionsView.pres_time.desc())
             # sql = str(mz_datas.statement.compile(dialect=mysql.dialect(), compile_kwargs={"literal_binds": True}))
             # sql = str(mz_datas.statement.compile(dialect=oracle.dialect(), compile_kwargs={"literal_binds": True}))
             logger.info("查询门诊视图获取待上传处方：")
@@ -319,16 +322,19 @@ def table_data(request, type):
                 # mysql 视图
                 query_text.append(ZYPrescriptionsView.pres_time.between(start_date, end_date))
             if len(query_text) > 0:
-                zy_datas = session_per.query(ZYPrescriptionsView).filter(*query_text)
+                zy_datas = session_per.query(ZYPrescriptionsView).filter(*query_text).order_by(
+                    ZYPrescriptionsView.pres_time.desc())
             else:
                 # 视图是 mysql
                 zy_datas = session_per.query(ZYPrescriptionsView).filter(
-                    ZYPrescriptionsView.pres_time.between(time_start, time_end))
+                    ZYPrescriptionsView.pres_time.between(time_start, time_end)).order_by(
+                    ZYPrescriptionsView.pres_time.desc())
                 # Oracle 视图
                 # zy_datas = session_per.query(ZYPrescriptionsView).filter(
                 #     ZYPrescriptionsView.pres_time.between(
                 #         datetime.datetime.strptime(str(time_start), "%Y-%m-%d %H:%M:%S"),
-                #         datetime.datetime.strptime(str(time_end), "%Y-%m-%d %H:%M:%S")))
+                #         datetime.datetime.strptime(str(time_end), "%Y-%m-%d %H:%M:%S"))).order_by(
+                #     ZYPrescriptionsView.pres_time.desc())
             # sql = str(zy_datas.statement.compile(dialect=mysql.dialect(), compile_kwargs={"literal_binds": True}))
             logger.info("查询住院视图获取待上传处方：")
             # logger.info('==> executing:%s' % sql)

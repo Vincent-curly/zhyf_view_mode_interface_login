@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c5463efa-d150-4944-a068-25ca39e03b84" name="Default Changelist" comment="对数据库初始化操作做修改">
+    <list default="true" id="c5463efa-d150-4944-a068-25ca39e03b84" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/logs/access-2022-04-06.log" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/logs/access-2022-04-07.log" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/logs/all-2022-04-06.log" afterDir="false" />
@@ -10,8 +10,8 @@
       <change afterPath="$PROJECT_DIR$/logs/localhost-2022-04-07.log" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/logs/web-2022-04-06.log" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/logs/web-2022-04-07.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/prescriptionManage/prescriptionQuery.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/prescriptionManage/prescriptionQuery.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploadTimer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/uploadTimer/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/management/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/management/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -165,6 +165,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="c5463efa-d150-4944-a068-25ca39e03b84" name="Default Changelist" comment="" />
+      <changelist id="" name="对数据库初始化操作做修改" comment="" />
       <created>1648922248467</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -179,7 +180,7 @@
       <workItem from="1649153881640" duration="1010000" />
       <workItem from="1649208137522" duration="14444000" />
       <workItem from="1649250078474" duration="13678000" />
-      <workItem from="1649303826664" duration="3774000" />
+      <workItem from="1649303826664" duration="10296000" />
     </task>
     <task id="LOCAL-00001" summary="更新打包">
       <created>1649113947626</created>
@@ -230,7 +231,28 @@
       <option name="project" value="LOCAL" />
       <updated>1649308016165</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="修改对 pres_num 条件的检索，前后端传值问题">
+      <created>1649308193639</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1649308193639</updated>
+    </task>
+    <task id="LOCAL-00009" summary="对数据库初始化操作做修改">
+      <created>1649308794686</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1649308794686</updated>
+    </task>
+    <task id="LOCAL-00010" summary="添加版本控制">
+      <created>1649309779983</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1649309779983</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,11 +275,13 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="更新打包" />
     <MESSAGE value="针对&quot;province&quot;字段更改--&gt;&quot;provinces&quot;" />
-    <MESSAGE value="对数据库初始化操作做修改" />
     <MESSAGE value="pip install cx_Oracle,安装Oracle包，增加对Oracle数据库访问的支持" />
     <MESSAGE value="应用到实际环境，取消中间处方表other_pres_num字段以及后台视图中对province字段的修改" />
     <MESSAGE value="针对 Oracle 数据库视图查询做修改" />
-    <option name="LAST_COMMIT_MESSAGE" value="针对 Oracle 数据库视图查询做修改" />
+    <MESSAGE value="修改对 pres_num 条件的检索，前后端传值问题" />
+    <MESSAGE value="对数据库初始化操作做修改" />
+    <MESSAGE value="添加版本控制" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加版本控制" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PrescriptionPushSystem$generate_code.coverage" NAME="generate_code Coverage Results" MODIFIED="1648928049887" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/backstage_quote" />
