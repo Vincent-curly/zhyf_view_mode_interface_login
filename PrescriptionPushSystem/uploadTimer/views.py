@@ -19,7 +19,6 @@ def time_out():
 
 
 def insert_mid_by_pres_consignee():
-    pres_detail = []
     logger_timer.info("查询处方地址关联表,获取未写入处方中间表和明细表的处方信息:")
     pres_consignee_lists = find_un_write_pres_consignee()
     if pres_consignee_lists:
@@ -28,6 +27,7 @@ def insert_mid_by_pres_consignee():
             del pres_consignee_list['addr_id']
             del pres_consignee_list['is_write_mid']
             prefix = pres_consignee_list['pres_num'][:3]
+            pres_detail = []
             if prefix == 'MZ_':
                 pres_query = session.query(MZPrescriptionsView.pres_num, MZPrescriptionsView.pres_time,
                                            MZPrescriptionsView.treat_card, MZPrescriptionsView.reg_num,
