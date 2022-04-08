@@ -7,7 +7,7 @@ from sqlalchemy import literal
 from sqlalchemy.dialects import mysql
 
 from lib.prescription_services.HosPrescriptionService import find_un_write_pres_consignee, get_pre_lists_by_statues, \
-    insert_mid_prescription, update_consignee_status, upload_prescriptions
+    insert_mid_prescription, update_consignee_status, upload_prescriptions, mid_prescriptions_insert_check
 from management.models import get_session, MZPrescriptionsView, MZDetailsView, ZYPrescriptionsView, ZYDetailsView
 
 logger_timer = logging.getLogger('PrescriptionPushSyetem.uploadTimer')
@@ -118,6 +118,7 @@ def insert_mid_by_pres_consignee():
                             logger_timer.info('写入中间表状态更新失败！{}'.format(consignee_update_res))
                     else:
                         logger_timer.info("处方中间表和处方明细表写入异常！{}".format(insert_mid_pres_res))
+                        mid_prescriptions_insert_check(pres_consignee_list['pres_num'])
                         message = "将处方插入中间表发生异常！"
                         # send_remind_message(pres_consignee_list['pres_num'], message)
                 else:

@@ -79,7 +79,7 @@ def upload_prescriptions(pre_lists):
         # 使用 requests 向 webservice 接口发送报文数据保存订单
         request_body = get_request_body(request_sb)
         response = requests.post(url, request_body)
-        logging.info('response envelope:%s' % response.text)
+        logger_timer.info('response envelope:%s' % response.text)
         env = Envelope(response.text)
         xml_data = response_base64_decode(env.get_context('return'))
         logger_timer.info("调用康美接口saveOrderInfoToCharacterSet End, 接口返回：%s", xml_data)
@@ -310,7 +310,7 @@ def update_consignee_status(pres_num):
     except SQLAlchemyError as e:
         session.rollback()
         message['status'] = 'fail'
-        logging.error(str(e))
+        logger_timer.error(str(e))
     session.close()
     return message
 
@@ -329,3 +329,34 @@ def send_remind_message(pres_num, message):
         params['templateParams'] = ['vincent', hos_name, pres_num, message]
         result = msg_client.send(params)
         logger_timer.info("结果：%s" % result)
+
+
+def mid_prescriptions_insert_check(pres_num):
+    session = get_session('local')[1]
+    message = {}
+    prescriptions = session.query(Prescription).filter(Prescription.pres_num == pres_num).first()
+    details = session.query(PresDetails).filter(PresDetails.pres_num == pres_num).all()
+    if prescriptions and details:
+        logger_timer.info("该处方两表数据统一！")
+    elif prescriptions:
+        logger_timer.info("该处方两表数据不统一！处方明细数据为空")
+        session.query(Prescription).filter(Prescription.pres_num == pres_num).delete()
+        try:
+            session.commit()
+            message['status'] = 'success'
+        except SQLAlchemyError as e:
+            session.rollback()
+            message['status'] = 'fail'
+            logger_timer.error(str(e))
+        logger_timer.info("执行数据统一操作：从中间处方表删除该处方数据！- {}".format(message))
+    else:
+        logger_timer.info("该处方两表数据不统一！处方表数据为空")
+        session.query(PresDetails).filter(PresDetails.pres_num == pres_num).delete()
+        try:
+            session.commit()
+            message['status'] = 'success'
+        except SQLAlchemyError as e:
+            session.rollback()
+            message['status'] = 'fail'
+            logger_timer.error(str(e))
+        logger_timer.info("执行数据统一操作：从处方明细表删除该处方数据！- {}".format(message))
